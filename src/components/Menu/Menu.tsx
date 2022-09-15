@@ -1,11 +1,14 @@
 import React, { PropsWithChildren } from 'react'
 import { css, cx } from '@emotion/css'
 
-export interface IMenuItem {}
+export interface IMenuItem {
+  selected?: boolean
+}
 
-export function MenuItem({ children }: PropsWithChildren<IMenuItem>) {
+export function MenuItem({ children, selected }: PropsWithChildren<IMenuItem>) {
   const className = css`
     padding: 12px;
+    background: ${selected && '#333'};
   `
 
   return <div className={className}>{children}</div>

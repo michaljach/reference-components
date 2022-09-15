@@ -8,7 +8,6 @@ export interface IFlexItem {
 
 export function FlexItem({ children, sm }: PropsWithChildren<IFlexItem>) {
   const className = css`
-    display: flex;
     width: ${sm ? widthMap[sm] : '100%'};
   `
 

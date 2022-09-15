@@ -1,5 +1,5 @@
 import React, { MouseEvent, PropsWithChildren, ReactNode, useContext } from 'react'
-import { css, cx } from '@emotion/css'
+import { cx } from '@emotion/css'
 import { ThemeContext } from '../../theme/ThemeProvider'
 import { ICommon } from '../../utils/common-interface'
 
@@ -43,10 +43,13 @@ export function Button({
   disabled,
   loading
 }: PropsWithChildren<IButton>) {
-  const theme = useContext(ThemeContext)
+  const { theme, css } = useContext(ThemeContext)
 
   const internalClassName = css`
     background: ${theme.background};
+    border: ${theme.border};
+    border-radius: ${theme.borderRadius};
+    padding: ${theme.padding[2]};
   `
 
   return (

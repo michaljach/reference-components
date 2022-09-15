@@ -1,17 +1,25 @@
 import React, { createContext, PropsWithChildren, useMemo } from 'react'
+import { css as emotionCss } from '@emotion/css'
+import { CacheProvider } from '@emotion/react'
+import createEmotion from '@emotion/css/create-instance'
+import defaultTheme, { ITheme } from './default-theme'
 
-const defaultTheme = {
-  background: '#f1f1f1'
-}
-
-export const ThemeContext = createContext(defaultTheme)
+export const ThemeContext = createContext({ theme: defaultTheme, css: emotionCss })
 
 interface IThemeProvider {
-  theme: any
+  theme?: ITheme
 }
 
 export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvider>) {
-  const value = useMemo(() => theme || defaultTheme, [theme])
+  const { cache, css } = createEmotion({
+    key: 'my-prefix-key',
+    prepend: true
+  })
+  const value = useMemo(() => ({ theme: theme || defaultTheme, css }), [theme])
 
-  return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+  return (
+    <CacheProvider value={cache}>
+      <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
+    </CacheProvider>
+  )
 }
