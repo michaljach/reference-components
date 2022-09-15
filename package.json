@@ -1,0 +1,45 @@
+{
+  "name": "reference-components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc --project tsconfig.prod.json",
+    "lint": "eslint src/**/*",
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaljach/tailwind-components.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/michaljach/tailwind-components/issues"
+  },
+  "homepage": "https://github.com/michaljach/tailwind-components#readme",
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.0.2",
+    "@types/react": "^18.0.20",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "jest": "^29.0.3",
+    "jest-environment-jsdom": "^29.0.3",
+    "prettier": "^2.7.1",
+    "ts-jest": "^29.0.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.10.0"
+  }
+}
