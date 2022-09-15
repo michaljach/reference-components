@@ -16,11 +16,11 @@ interface IButtonIcon {
 
 function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
   if (loading) {
-    return <span className={classNames?.icon}>Loading...</span>
+    return <span className={cx('ref-button-icon', classNames?.icon)}>Loading...</span>
   }
 
   if (icon) {
-    return <span className={classNames?.icon}>{icon}</span>
+    return <span className={cx('ref-button-icon', classNames?.icon)}>{icon}</span>
   }
 
   return null
@@ -46,21 +46,39 @@ export function Button({
   const { theme, css } = useContext(ThemeContext)
 
   const internalClassName = css`
-    background: ${theme.background};
-    border: ${theme.border};
-    border-radius: ${theme.borderRadius};
-    padding: ${theme.padding[2]};
+    background: ${theme.Button?.background?.normal};
+    border: ${theme.Button?.border};
+    border-radius: ${theme.Button?.borderRadius};
+    padding: ${theme.padding?.[2]};
+    cursor: pointer;
+
+    &:hover {
+      background: ${theme.Button?.background?.hover};
+    }
+
+    &:active {
+      background: ${theme.Button?.background?.active};
+    }
+
+    &:focus {
+      background: ${theme.Button?.background?.focus};
+    }
   `
 
   return (
     <button
       disabled={disabled}
-      className={cx(internalClassName, className)}
+      className={cx(
+        'ref-button',
+        loading && 'ref-button-loading',
+        internalClassName,
+        className
+      )}
       type="button"
       onClick={onClick}
     >
       <ButtonIcon loading={loading} icon={icon} classNames={classNames} />
-      <span className={classNames?.text}>{children}</span>
+      <span className={cx('ref-button-text', classNames?.text)}>{children}</span>
     </button>
   )
 }

@@ -12,7 +12,7 @@ interface IThemeProvider {
 
 export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvider>) {
   const { cache, css } = createEmotion({
-    key: 'my-prefix-key',
+    key: 'ref',
     prepend: true
   })
   const value = useMemo(() => ({ theme: theme || defaultTheme, css }), [theme])
