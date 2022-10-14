@@ -13,6 +13,10 @@ export interface ITheme {
     border?: string
     borderRadius?: string
   }
+  Tabs?: {
+    background?: IThemeBackground
+    border?: string
+  }
   Input?: {
     background?: IThemeBackground
     border?: string
@@ -32,6 +36,16 @@ const defaultTheme: ITheme = {
     },
     border: '0',
     borderRadius: '0'
+  },
+  Tabs: {
+    background: {
+      normal: '#f1f1f1',
+      hover: '#ccc',
+      active: '#333',
+      focus: '#f1f1f1',
+      visited: '#fff'
+    },
+    border: '2px solid #f1f1f1'
   },
   Input: {
     background: {
