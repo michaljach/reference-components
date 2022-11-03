@@ -9,16 +9,22 @@ import { cx } from '@emotion/css'
 import { ThemeContext } from '../../theme/ThemeProvider'
 import { ICommon } from '../../utils/common-interface'
 
-interface ITabsClassNames {}
+interface ITabsClassNames {
+  tabs?: string
+  tab?: string
+  content?: string
+}
 
 export interface ITabs extends ICommon {
   classNames?: ITabsClassNames
-  children: any
+  children: ReactElement<ITabPane>[]
   activeTab?: string
 }
 
 interface ITabPane extends ICommon {
+  // eslint-disable-next-line
   title: string
+  // eslint-disable-next-line
   id: string
 }
 
@@ -42,10 +48,12 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
       display: flex;
     `,
     tab: css`
+      border: 0;
       cursor: pointer;
       padding: ${theme.padding?.[2]};
     `,
     tabActive: css`
+      border: 0;
       cursor: pointer;
       background: ${theme.Tabs?.background?.normal};
       padding: ${theme.padding?.[2]};
@@ -56,7 +64,7 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
   }
 
   const onTabSelect = (id: string) => {
-    const tab = arrayChildren.find((tab) => tab.props.id === id)
+    const tab = arrayChildren.find((child) => child.props.id === id)
     if (tab) {
       setActive(tab)
     }
@@ -64,27 +72,33 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
 
   return (
     <div className={cx('ref-tabs', internalStyles.container, className)}>
-      <div className={cx('ref-tabs-tabs', internalStyles.tabs)}>
-        {Children.map(arrayChildren, (child: ReactElement<ITabPane>, index) => {
+      <div className={cx('ref-tabs-tabs', internalStyles.tabs, classNames?.tabs)}>
+        {Children.map(arrayChildren, (child: ReactElement<ITabPane>) => {
           return (
-            <div
+            <button
+              type="button"
               className={cx(
                 child.props.id === active.props.id
                   ? 'ref-tabs-tab ref-tabs-tab--active'
                   : 'ref-tabs-tab',
                 child.props.id === active.props.id
                   ? internalStyles.tabActive
-                  : internalStyles.tab
+                  : internalStyles.tab,
+                classNames?.tab
               )}
               key={child.props.id}
               onClick={() => onTabSelect(child.props.id)}
             >
               {child.props.title}
-            </div>
+            </button>
           )
         })}
       </div>
-      <div className={cx('ref-tabs-content', internalStyles.content)}>{active}</div>
+      <div
+        className={cx('ref-tabs-content', internalStyles.content, classNames?.content)}
+      >
+        {active}
+      </div>
     </div>
   )
 }
