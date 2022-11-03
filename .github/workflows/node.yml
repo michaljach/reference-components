@@ -1,42 +1,37 @@
-name: Build
-on: [push]
+name: Test, Build and Publish
+
+on:
+  push:
+    branches:
+      - 'main'
+
 jobs:
   build:
-    name: Install, Lint, Test
+    name: Test, Build and Publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: 'Checkout source code'
+        uses: actions/checkout@v2
+      - name: 'Setup Node environment'
+        uses: actions/setup-node@v2
         with:
           node-version: '16'
           cache: 'npm'
-      - run: npm ci
-      - run: npm run lint
-      - run: npm run test
-
-  bump-version:
-    name: 'Bump Version on master'
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: 'Automated Version Bump'
+      - name: 'Install'
+        run: npm ci
+      - name: 'Lint'
+        run: npm run lint
+      - name: 'Test'
+        run: npm run test
+      - name: 'Version Bump'
         id: version-bump
         uses: 'phips28/gh-action-bump-version@master'
         with:
           tag-prefix: 'v'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-  publish:
-    name: Publish to NPM
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.x'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm run build
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: 'Publish to NPM'
+        run: npm run build
+        run: npm publish
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
