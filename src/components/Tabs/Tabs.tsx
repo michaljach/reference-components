@@ -50,16 +50,16 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
     tab: css`
       border: 0;
       cursor: pointer;
-      padding: ${theme.padding?.[2]};
+      padding: ${theme.spacing[2]};
     `,
     tabActive: css`
       border: 0;
       cursor: pointer;
-      background: ${theme.Tabs?.background?.normal};
-      padding: ${theme.padding?.[2]};
+      background: ${theme.colors.primary.main};
+      padding: ${theme.spacing[2]};
     `,
     content: css`
-      padding: ${theme.padding?.[0]};
+      padding: ${theme.spacing[2]};
     `
   }
 

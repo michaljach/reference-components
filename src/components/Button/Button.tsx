@@ -46,22 +46,21 @@ export function Button({
   const { theme, css } = useContext(ThemeContext)
 
   const internalClassName = css`
-    background: ${theme.Button?.background?.normal};
-    border: ${theme.Button?.border};
-    border-radius: ${theme.Button?.borderRadius};
-    padding: ${theme.padding?.[2]};
+    background: ${theme.colors.primary.main};
+    border-radius: ${theme.shape.borderRadius};
+    padding: ${theme.spacing[1]};
     cursor: pointer;
 
     &:hover {
-      background: ${theme.Button?.background?.hover};
+      background: ${theme.colors.primary.dark};
     }
 
     &:active {
-      background: ${theme.Button?.background?.active};
+      background: ${theme.colors.primary.dark};
     }
 
     &:focus {
-      background: ${theme.Button?.background?.focus};
+      background: ${theme.colors.primary.light};
     }
   `
 

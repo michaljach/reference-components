@@ -11,20 +11,19 @@ export function Input({ value, onChange }: IInput) {
   const { theme, css } = useContext(ThemeContext)
 
   const internalClassName = css`
-    background: ${theme.Input?.background?.normal};
-    padding: ${theme.padding?.[2]};
-    border: ${theme.Input?.border};
+    background: ${theme.colors.primary.light};
+    padding: ${theme.spacing[2]};
 
     &:hover {
-      background: ${theme.Input?.background?.hover};
+      background: ${theme.colors.primary.dark};
     }
 
     &:active {
-      background: ${theme.Input?.background?.active};
+      background: ${theme.colors.primary.light};
     }
 
     &:focus {
-      background: ${theme.Input?.background?.focus};
+      background: ${theme.colors.primary.light};
     }
   `
 

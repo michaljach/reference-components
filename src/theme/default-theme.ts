@@ -1,61 +1,34 @@
-interface IThemeBackground {
-  normal: string
-  hover: string
-  active: string
-  focus: string
-  visited: string
-}
-
 export interface ITheme {
-  padding?: string[]
-  Button?: {
-    background?: IThemeBackground
-    border?: string
-    borderRadius?: string
+  spacing: {
+    [key: number]: string
   }
-  Tabs?: {
-    background?: IThemeBackground
-    border?: string
+  colors: {
+    primary: {
+      main: string
+      light: string
+      dark: string
+    }
   }
-  Input?: {
-    background?: IThemeBackground
-    border?: string
-    borderRadius?: string
+  shape: {
+    borderRadius: string
   }
 }
 
 const defaultTheme: ITheme = {
-  padding: ['4px', '8px', '12px', '24px'],
-  Button: {
-    background: {
-      normal: '#f1f1f1',
-      hover: '#ccc',
-      active: '#333',
-      focus: '#f1f1f1',
-      visited: '#fff'
-    },
-    border: '0',
-    borderRadius: '0'
+  spacing: {
+    1: '2px',
+    2: '4px',
+    3: '8px'
   },
-  Tabs: {
-    background: {
-      normal: '#f1f1f1',
-      hover: '#ccc',
-      active: '#333',
-      focus: '#f1f1f1',
-      visited: '#fff'
-    },
-    border: '2px solid #f1f1f1'
+  colors: {
+    primary: {
+      main: '#0000ff',
+      light: '#0000ff',
+      dark: '#0000ff'
+    }
   },
-  Input: {
-    background: {
-      normal: '#fff',
-      hover: '#ccc',
-      active: '#333',
-      focus: '#f1f1f1',
-      visited: '#fff'
-    },
-    border: '2px solid #f1f1f1'
+  shape: {
+    borderRadius: '3px'
   }
 }
 
