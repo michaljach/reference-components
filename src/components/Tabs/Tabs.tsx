@@ -7,7 +7,7 @@ import React, {
 } from 'react'
 import { cx } from '@emotion/css'
 import { ThemeContext } from '../../theme/ThemeProvider'
-import { ICommon } from '../../utils/common-interface'
+import { ICommon } from '../../common/common-interface'
 
 interface ITabsClassNames {
   tabs?: string

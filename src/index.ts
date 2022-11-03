@@ -1,7 +1,3 @@
 export * from './components/Button/Button'
-export * from './components/Input/Input'
-export * from './components/Flex/Flex'
-export * from './components/Grid/Grid'
-export * from './components/Menu/Menu'
 export * from './components/Tabs/Tabs'
 export * from './theme/ThemeProvider'

@@ -1,7 +1,7 @@
 import React, { MouseEvent, PropsWithChildren, ReactNode, useContext } from 'react'
 import { cx } from '@emotion/css'
 import { ThemeContext } from '../../theme/ThemeProvider'
-import { ICommon } from '../../utils/common-interface'
+import { ICommon } from '../../common/common-interface'
 
 interface IButtonClassNames {
   icon?: string
@@ -46,21 +46,21 @@ export function Button({
   const { theme, css } = useContext(ThemeContext)
 
   const internalClassName = css`
-    background: ${theme.colors.primary.main};
+    background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.main};
+    border: 0;
     border-radius: ${theme.shape.borderRadius};
-    padding: ${theme.spacing[1]};
-    cursor: pointer;
+    color: ${theme.colors.primary.text};
+    cursor: ${disabled ? 'not-allowed' : 'pointer'};
+    padding: ${theme.spacing[4]};
+    position: relative;
 
-    &:hover {
-      background: ${theme.colors.primary.dark};
+    &:hover,
+    &:focus {
+      background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.dark};
     }
 
     &:active {
-      background: ${theme.colors.primary.dark};
-    }
-
-    &:focus {
-      background: ${theme.colors.primary.light};
+      top: 1px;
     }
   `
 
