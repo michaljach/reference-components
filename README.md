@@ -4,6 +4,11 @@
 
 Ready-to-style functional components for React applications and custom component libraries.
 
+- style however you want
+- optimized for low bundle size
+- solid base for creating your own component library
+- React 17+
+
 ## Components
 
 - [Button](src/components/Button)
@@ -12,6 +17,50 @@ Ready-to-style functional components for React applications and custom component
 - Grid
 - Menu
 - Flex
+
+## Styling
+
+- with SCSS/LESS or other preprocessors
+
+```
+.icon-class {
+  padding: 4px;
+}
+```
+
+```
+<Button classNames={{
+  icon: 'icon-class'
+}}>
+  Hello
+</Button>
+```
+
+Each component has its own list of classNames.
+
+- with Tailwind
+
+```
+<Button classNames={{
+  icon: 'bg-blue p-4'
+}}>
+  Hello
+</Button>
+```
+
+- with classic CSS classes
+
+```
+.ref-button {
+  color: red;
+}
+```
+
+```
+<Button>Hello</Button>
+```
+
+Each component has its own classes prefixed with `ref-`.
 
 ## Themes
 
