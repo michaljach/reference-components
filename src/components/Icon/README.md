@@ -12,8 +12,6 @@ import { LoaderIcon } from 'reference-components'
 
 ### Icons
 
-![LoaderIcon](./svg/loader.svg)
-
 ## API
 
 | Prop         | Type                                                    | Example                 |

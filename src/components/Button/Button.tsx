@@ -2,7 +2,7 @@ import React, { MouseEvent, PropsWithChildren, ReactNode, useContext } from 'rea
 import { cx } from '@emotion/css'
 import { ThemeContext } from '../../theme/ThemeProvider'
 import { ICommon } from '../../common/common-interface'
-import { LoaderSVG } from '../Icon/Icon'
+import { LoaderIcon } from '../Icon/Icon'
 
 interface IButtonClassNames {
   icon?: string
@@ -17,7 +17,11 @@ interface IButtonIcon {
 
 function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
   if (loading) {
-    return <span className={cx('ref-button-icon', classNames?.icon)}>{LoaderSVG}</span>
+    return (
+      <span className={cx('ref-button-icon', classNames?.icon)}>
+        <LoaderIcon />
+      </span>
+    )
   }
 
   if (icon) {

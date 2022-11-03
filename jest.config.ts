@@ -4,7 +4,8 @@ const config: Config.InitialOptions = {
   verbose: true,
   testEnvironment: 'jsdom',
   transform: {
-    '^.+\\.tsx?$': 'ts-jest'
+    '^.+\\.tsx?$': 'ts-jest',
+    '\\.svg$': 'svg-jest'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
   collectCoverageFrom: ['src/components/**']

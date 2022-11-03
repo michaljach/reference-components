@@ -40,16 +40,16 @@ describe('Button', () => {
   })
 
   it('should show loading state', async () => {
-    render(
+    const container = render(
       <Button onClick={() => null} loading>
         Example
       </Button>
     )
-    expect(screen.getByText(/Loading.../)).toBeInTheDocument()
+    expect(container.container.getElementsByTagName('svg').length).toBe(1)
   })
 
   it('should show loading state with icon', async () => {
-    const { rerender } = render(
+    const { rerender, container } = render(
       <Button
         onClick={() => null}
         icon={<>Icon</>}
@@ -60,7 +60,7 @@ describe('Button', () => {
       </Button>
     )
     expect(screen.queryByText(/Icon/)).not.toBeInTheDocument()
-    expect(screen.getByText(/Loading.../)).toBeInTheDocument()
+    expect(container.getElementsByTagName('svg').length).toBe(1)
 
     rerender(
       <Button onClick={() => null} icon={<>Icon</>} loading={false}>
