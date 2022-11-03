@@ -30,7 +30,7 @@ function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
 
   if (loading) {
     return (
-      <span className={cx('ref-button-icon', classNames?.icon)}>
+      <span className={cx('ref-button-icon', classNames?.icon, internalStyles.icon)}>
         <LoaderIcon />
       </span>
     )
