@@ -16,6 +16,18 @@ interface IButtonIcon {
 }
 
 function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
+  const { theme, css } = useContext(ThemeContext)
+
+  const internalStyles = {
+    icon: css`
+      margin-right: ${theme.spacing[2]};
+
+      svg {
+        fill: ${theme.colors.primary.text};
+      }
+    `
+  }
+
   if (loading) {
     return (
       <span className={cx('ref-button-icon', classNames?.icon)}>
@@ -25,7 +37,11 @@ function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
   }
 
   if (icon) {
-    return <span className={cx('ref-button-icon', classNames?.icon)}>{icon}</span>
+    return (
+      <span className={cx('ref-button-icon', classNames?.icon, internalStyles.icon)}>
+        {icon}
+      </span>
+    )
   }
 
   return null
@@ -50,24 +66,28 @@ export function Button({
 }: PropsWithChildren<IButton>) {
   const { theme, css } = useContext(ThemeContext)
 
-  const internalClassName = css`
-    background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.main};
-    border: 0;
-    border-radius: ${theme.shape.borderRadius};
-    color: ${theme.colors.primary.text};
-    cursor: ${disabled ? 'not-allowed' : 'pointer'};
-    padding: ${theme.spacing[4]};
-    position: relative;
+  const internalStyles = {
+    button: css`
+      align-items: center;
+      background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.main};
+      border: 0;
+      border-radius: ${theme.shape.borderRadius};
+      color: ${theme.colors.primary.text};
+      cursor: ${disabled ? 'not-allowed' : 'pointer'};
+      display: flex;
+      padding: ${theme.spacing[4]};
+      position: relative;
 
-    &:hover,
-    &:focus {
-      background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.dark};
-    }
+      &:hover,
+      &:focus {
+        background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.dark};
+      }
 
-    &:active {
-      top: 1px;
-    }
-  `
+      &:active {
+        top: 1px;
+      }
+    `
+  }
 
   return (
     <button
@@ -75,7 +95,7 @@ export function Button({
       className={cx(
         'ref-button',
         loading && 'ref-button-loading',
-        internalClassName,
+        internalStyles.button,
         className
       )}
       type="button"
