@@ -5,7 +5,7 @@
     "esModuleInterop": true,
     "jsx": "react",
     "lib": ["ES5", "ES2015", "ES2016", "DOM", "ESNext"],
-    "module": "es2015",
+    "module": "CommonJS",
     "moduleResolution": "node",
     "noImplicitAny": true,
     "noUnusedLocals": true,
