@@ -1,5 +1,4 @@
 [![Actions Status](https://github.com/michaljach/reference-components/workflows/Build/badge.svg)](https://github.com/michaljach/reference-components/actions)
-
 ![Size](https://img.shields.io/bundlephobia/min/reference-components)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/michaljach/reference-components)
 ![License](https://img.shields.io/github/license/michaljach/reference-components)
