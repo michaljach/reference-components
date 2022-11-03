@@ -21,14 +21,23 @@ Use `ThemeProvider` to leverage dynamic theming.
 import { ThemeProvider, ITheme } from 'reference-components'
 
 const theme: ITheme = {
-	Button: {
-		borderRadius: '3px'
-	}
+  Button: {
+    borderRadius: '3px'
+  }
 }
 
 root.render(
-	<ThemeProvider theme={theme}>
-		<App  />
-	</ThemeProvider>
+  <ThemeProvider theme={theme}>
+    <App  />
+  </ThemeProvider>
 )
 ```
+
+## Development
+
+Project under active development, new components and features are being added.
+Contributions are always welcome.
+
+## License
+
+MIT License. See [LICENSE](LICENSE) file for more details.
