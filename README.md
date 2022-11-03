@@ -8,6 +8,7 @@ Ready-to-style functional components for React applications and custom component
 - optimized for low bundle size
 - solid base for creating your own component library
 - React 17+
+- Heavily tested
 
 ## Components
 
@@ -20,7 +21,7 @@ Ready-to-style functional components for React applications and custom component
 
 ## Styling
 
-- with SCSS/LESS or other preprocessors
+- with **SCSS/LESS** or other preprocessors
 
 ```
 .icon-class {
@@ -38,7 +39,7 @@ Ready-to-style functional components for React applications and custom component
 
 Each component has its own list of classNames.
 
-- with Tailwind
+- with **Tailwind**
 
 ```
 <Button classNames={{
@@ -48,7 +49,7 @@ Each component has its own list of classNames.
 </Button>
 ```
 
-- with classic CSS classes
+- with **classic CSS** classes
 
 ```
 .ref-button {
