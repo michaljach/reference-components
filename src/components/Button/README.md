@@ -1,0 +1,11 @@
+### Reference Components
+
+# Button
+
+### Simple Button
+
+```
+import { Button } from 'reference-components'
+
+<Button onClick={() => alert('Hi')}>Hello World</Button>
+```
