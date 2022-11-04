@@ -15,6 +15,12 @@ export interface ITheme {
       dark: string
       text: string
     }
+    tertiary: {
+      main: string
+      light: string
+      dark: string
+      text: string
+    }
   }
   shape: {
     borderRadius: string
@@ -39,6 +45,12 @@ const defaultTheme: ITheme = {
       main: '#ccc',
       light: '#fbfbfb',
       dark: '#888',
+      text: '#fff'
+    },
+    tertiary: {
+      main: '#ff0000',
+      light: '#ff0000',
+      dark: '#ff0000',
       text: '#fff'
     }
   },
