@@ -16,10 +16,7 @@ export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvi
     key: 'ref',
     prepend: true
   })
-  const value = useMemo(
-    () => ({ theme: { ...defaultTheme, ...theme } || defaultTheme, css }),
-    [theme]
-  )
+  const value = useMemo(() => ({ theme: { ...defaultTheme, ...theme }, css }), [theme])
 
   return (
     <CacheProvider value={cache}>
