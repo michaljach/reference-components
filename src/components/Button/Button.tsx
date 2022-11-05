@@ -11,11 +11,12 @@ interface IButtonClassNames {
 
 interface IButtonIcon {
   loading?: boolean
+  loadingIcon?: ReactNode
   icon?: ReactNode
   classNames?: IButtonClassNames
 }
 
-function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
+function ButtonIcon({ loading, loadingIcon, icon, classNames }: IButtonIcon) {
   const { theme, css } = useContext(ThemeContext)
 
   const internalStyles = {
@@ -31,7 +32,7 @@ function ButtonIcon({ loading, icon, classNames }: IButtonIcon) {
   if (loading) {
     return (
       <span className={cx('ref-button-icon', classNames?.icon, internalStyles.icon)}>
-        <LoaderIcon />
+        {loadingIcon || <LoaderIcon />}
       </span>
     )
   }
@@ -51,6 +52,7 @@ export interface IButton extends ICommon {
   onClick: (event: MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
   loading?: boolean
+  loadingIcon?: ReactNode
   icon?: ReactNode
   classNames?: IButtonClassNames
 }
@@ -62,7 +64,8 @@ export function Button({
   onClick,
   classNames,
   disabled,
-  loading
+  loading,
+  loadingIcon
 }: PropsWithChildren<IButton>) {
   const { theme, css } = useContext(ThemeContext)
 
@@ -101,7 +104,12 @@ export function Button({
       type="button"
       onClick={onClick}
     >
-      <ButtonIcon loading={loading} icon={icon} classNames={classNames} />
+      <ButtonIcon
+        loading={loading}
+        icon={icon}
+        loadingIcon={loadingIcon}
+        classNames={classNames}
+      />
       <span className={cx('ref-button-text', classNames?.text)}>{children}</span>
     </button>
   )

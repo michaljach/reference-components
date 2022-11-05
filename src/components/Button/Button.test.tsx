@@ -70,4 +70,13 @@ describe('Button', () => {
     expect(screen.queryByText(/Icon/)).toBeInTheDocument()
     expect(screen.queryByText(/Loading.../)).not.toBeInTheDocument()
   })
+
+  it('should show loading state with custom icon', async () => {
+    render(
+      <Button onClick={() => null} loadingIcon={<>Loading Icon</>} loading>
+        Example
+      </Button>
+    )
+    expect(screen.queryByText(/Loading Icon/)).toBeInTheDocument()
+  })
 })
