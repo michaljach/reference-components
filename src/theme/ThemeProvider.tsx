@@ -23,3 +23,5 @@ export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvi
     </CacheProvider>
   )
 }
+
+export { ITheme }
