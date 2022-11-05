@@ -48,14 +48,17 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
       display: flex;
     `,
     tab: css`
+      background-color: transparent;
       border: 0;
+      border-bottom: 3px solid transparent;
       cursor: pointer;
       padding: ${theme.spacing[2]};
     `,
     tabActive: css`
+      background-color: transparent;
       border: 0;
+      border-bottom: 3px solid ${theme.colors.primary.main};
       cursor: pointer;
-      background: ${theme.colors.primary.main};
       padding: ${theme.spacing[2]};
     `,
     content: css`
