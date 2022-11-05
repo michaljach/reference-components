@@ -24,6 +24,8 @@ jobs:
         run: npm run lint
       - name: 'Test'
         run: npm run test
+      - name: 'Coverage'
+        uses: codecov/codecov-action@v3
       # - name: 'Version Bump'
       #   id: version-bump
       #   uses: 'phips28/gh-action-bump-version@master'
