@@ -1,5 +1,6 @@
 [![Actions Status](https://github.com/michaljach/reference-components/workflows/Build/badge.svg)](https://github.com/michaljach/reference-components/actions)
 ![Version](https://img.shields.io/npm/v/reference-components)
+[![codecov](https://codecov.io/github/michaljach/reference-components/branch/main/graph/badge.svg?token=G5HJXXVD08)](https://codecov.io/github/michaljach/reference-components)
 ![Size](https://img.shields.io/bundlephobia/min/reference-components)
 ![Vulnerabilities](https://img.shields.io/snyk/vulnerabilities/github/michaljach/reference-components)
 ![License](https://img.shields.io/github/license/michaljach/reference-components)
