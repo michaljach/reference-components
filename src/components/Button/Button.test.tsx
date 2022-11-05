@@ -21,15 +21,15 @@ describe('Button', () => {
   it('should add css classes', () => {
     const { container } = render(
       <Button
-        classNames={{ icon: 'iconclass', text: 'textclass' }}
+        classNames={{ icon: 'icon_class', label: 'label_class' }}
         onClick={() => null}
         icon={<>Icon</>}
       >
         Example
       </Button>
     )
-    expect(container.firstChild?.childNodes[0]).toHaveClass('iconclass')
-    expect(container.firstChild?.childNodes[1]).toHaveClass('textclass')
+    expect(container.firstChild?.childNodes[0]).toHaveClass('icon_class')
+    expect(container.firstChild?.childNodes[1]).toHaveClass('label_class')
   })
 
   it('should respond to onClick action', async () => {

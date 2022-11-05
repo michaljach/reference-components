@@ -6,7 +6,7 @@ import { LoaderIcon } from '../Icon/Icon'
 
 interface IButtonClassNames {
   icon?: string
-  text?: string
+  label?: string
 }
 
 interface IButtonIcon {
@@ -110,7 +110,7 @@ export function Button({
         loadingIcon={loadingIcon}
         classNames={classNames}
       />
-      <span className={cx('ref-button-text', classNames?.text)}>{children}</span>
+      <span className={cx('ref-button-label', classNames?.label)}>{children}</span>
     </button>
   )
 }

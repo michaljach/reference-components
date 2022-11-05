@@ -24,16 +24,16 @@ jobs:
         run: npm run lint
       - name: 'Test'
         run: npm run test
-      - name: 'Version Bump'
-        id: version-bump
-        uses: 'phips28/gh-action-bump-version@master'
-        with:
-          tag-prefix: 'v'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: 'Build'
-        run: npm run build
-      - name: 'Publish to NPM'
-        run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      # - name: 'Version Bump'
+      #   id: version-bump
+      #   uses: 'phips28/gh-action-bump-version@master'
+      #   with:
+      #     tag-prefix: 'v'
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - name: 'Build'
+      #   run: npm run build
+      # - name: 'Publish to NPM'
+      #   run: npm publish
+      #   env:
+      #     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
