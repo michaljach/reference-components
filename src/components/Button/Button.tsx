@@ -26,7 +26,7 @@ function ButtonIcon({ loading, loadingIcon, icon, classNames }: IButtonIcon) {
 
       svg {
         height: 18px;
-        fill: ${theme.colors.primary.text};
+        color: ${theme.colors.primary.text};
       }
     `
   }
