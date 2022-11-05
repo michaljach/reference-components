@@ -2,7 +2,7 @@
 
 # Icons
 
-### LoaderIcon
+### Example usage
 
 ```
 import { LoaderIcon } from 'reference-components'
@@ -12,9 +12,10 @@ import { LoaderIcon } from 'reference-components'
 
 ### Icons
 
+ActivityIcon
+LoaderIcon
+
 ## API
 
-| Prop         | Type                                                    | Example                 |
-| ------------ | ------------------------------------------------------- | ----------------------- |
-| onClick      | `(event: MouseEventHandler<HTMLButtonElement>) => void` | `() => { alert('Hi') }` |
-| Content Cell | Content Cell                                            | Content Cell            |
+| Prop | Type | Example |
+| ---- | ---- | ------- |

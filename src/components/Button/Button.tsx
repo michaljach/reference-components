@@ -21,9 +21,11 @@ function ButtonIcon({ loading, loadingIcon, icon, classNames }: IButtonIcon) {
 
   const internalStyles = {
     icon: css`
+      display: flex;
       margin-right: ${theme.spacing[2]};
 
       svg {
+        height: 18px;
         fill: ${theme.colors.primary.text};
       }
     `
@@ -80,6 +82,7 @@ export function Button({
       display: flex;
       padding: ${theme.spacing[4]};
       position: relative;
+      min-height: 45px;
 
       &:hover,
       &:focus {

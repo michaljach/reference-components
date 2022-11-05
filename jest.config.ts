@@ -8,7 +8,7 @@ const config: Config.InitialOptions = {
     '\\.svg$': 'svg-jest'
   },
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
-  collectCoverageFrom: ['src/components/**']
+  collectCoverageFrom: ['src/**/*.tsx', '!src/**/*.stories.tsx']
 }
 
 export default config

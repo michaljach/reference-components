@@ -1,31 +1,4 @@
-export interface ITheme {
-  spacing: {
-    [key: number]: string
-  }
-  colors: {
-    primary: {
-      main: string
-      light: string
-      dark: string
-      text: string
-    }
-    secondary: {
-      main: string
-      light: string
-      dark: string
-      text: string
-    }
-    tertiary: {
-      main: string
-      light: string
-      dark: string
-      text: string
-    }
-  }
-  shape: {
-    borderRadius: string
-  }
-}
+import { ITheme } from '../common/common-interface'
 
 const defaultTheme: ITheme = {
   spacing: {
@@ -55,7 +28,7 @@ const defaultTheme: ITheme = {
     }
   },
   shape: {
-    borderRadius: '6px'
+    borderRadius: '11px'
   }
 }
 

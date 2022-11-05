@@ -90,6 +90,12 @@ root.render(
 
 ## Development
 
+Start local development server with [Ladle](https://ladle.dev/)
+
+```
+npm start
+```
+
 Project under active development, new components and features are being added.
 Contributions are always welcome.
 

@@ -2,7 +2,8 @@ import React, { createContext, PropsWithChildren, useMemo } from 'react'
 import { css as emotionCss } from '@emotion/css'
 import { CacheProvider } from '@emotion/react'
 import createEmotion from '@emotion/css/create-instance'
-import defaultTheme, { ITheme } from './default-theme'
+import defaultTheme from './default-theme'
+import { ITheme } from '../common/common-interface'
 
 export const ThemeContext = createContext({ theme: defaultTheme, css: emotionCss })
 
@@ -23,5 +24,3 @@ export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvi
     </CacheProvider>
   )
 }
-
-export { ITheme }
