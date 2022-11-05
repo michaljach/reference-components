@@ -18,11 +18,7 @@ Ready-to-style functional components for React applications and custom component
 ## Components
 
 - [Button](src/components/Button)
-- Input
-- Tabs
-- Grid
-- Menu
-- Flex
+- [Tabs](src/components/Tabs)
 
 ## Styling
 

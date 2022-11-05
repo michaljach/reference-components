@@ -12,8 +12,8 @@ import { LoaderIcon } from 'reference-components'
 
 ### Icons
 
-ActivityIcon
-LoaderIcon
+- ActivityIcon
+- LoaderIcon
 
 ## API
 
