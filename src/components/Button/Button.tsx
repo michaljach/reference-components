@@ -22,11 +22,11 @@ function ButtonIcon({ loading, loadingIcon, icon, classNames }: IButtonIcon) {
   const internalStyles = {
     icon: css`
       display: flex;
-      margin-right: ${theme.spacing[2]};
+      margin-right: ${theme.spacing?.[2]};
 
       svg {
         height: 18px;
-        fill: ${theme.colors.primary.text};
+        fill: ${theme.colors?.primary?.text};
       }
     `
   }
@@ -74,19 +74,23 @@ export function Button({
   const internalStyles = {
     button: css`
       align-items: center;
-      background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.main};
+      background: ${disabled
+        ? theme.colors?.secondary?.main
+        : theme.colors?.primary?.main};
       border: 0;
-      border-radius: ${theme.shape.borderRadius};
-      color: ${theme.colors.primary.text};
+      border-radius: ${theme.shape?.borderRadius};
+      color: ${theme.colors?.primary?.text};
       cursor: ${disabled ? 'not-allowed' : 'pointer'};
       display: flex;
-      padding: ${theme.spacing[4]};
+      padding: ${theme.spacing?.[4]};
       position: relative;
       min-height: 45px;
 
       &:hover,
       &:focus {
-        background: ${disabled ? theme.colors.secondary.main : theme.colors.primary.dark};
+        background: ${disabled
+          ? theme.colors?.secondary?.main
+          : theme.colors?.primary?.dark};
       }
 
       &:active {

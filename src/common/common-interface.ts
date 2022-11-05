@@ -3,30 +3,30 @@ export interface ICommon {
 }
 
 export interface ITheme {
-  spacing: {
+  spacing?: {
     [key: number]: string
   }
-  colors: {
-    primary: {
+  colors?: {
+    primary?: {
       main: string
       light: string
       dark: string
       text: string
     }
-    secondary: {
+    secondary?: {
       main: string
       light: string
       dark: string
       text: string
     }
-    tertiary: {
+    tertiary?: {
       main: string
       light: string
       dark: string
       text: string
     }
   }
-  shape: {
-    borderRadius: string
+  shape?: {
+    borderRadius?: string
   }
 }

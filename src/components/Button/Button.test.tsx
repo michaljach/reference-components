@@ -2,6 +2,7 @@ import * as React from 'react'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Button } from './Button'
+import { ThemeProvider } from '../../theme/ThemeProvider'
 
 describe('Button', () => {
   it('should show basic button with text', () => {
@@ -16,6 +17,17 @@ describe('Button', () => {
       </Button>
     )
     expect(screen.getByText(/Icon/)).toBeInTheDocument()
+  })
+
+  it('should use provided theme', () => {
+    const { container } = render(
+      <ThemeProvider theme={{ shape: { borderRadius: '1px' } }}>
+        <Button icon={<>Icon</>} onClick={() => null}>
+          Example
+        </Button>
+      </ThemeProvider>
+    )
+    expect(container.firstChild).toHaveStyle('border-radius: 1px')
   })
 
   it('should add css classes', () => {
