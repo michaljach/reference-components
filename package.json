@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/michaljach/reference-components#readme",
   "devDependencies": {
+    "@ladle/react": "^2.4.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^12.1.5",
     "@testing-library/user-event": "^14.4.3",
@@ -46,7 +47,6 @@
   },
   "dependencies": {
     "@emotion/css": "^11.10.0",
-    "@emotion/react": "^11.10.4",
-    "@ladle/react": "^2.4.5"
+    "@emotion/react": "^11.10.4"
   }
 }

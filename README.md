@@ -19,6 +19,7 @@ Ready-to-style functional components for React applications and custom component
 
 - [Button](src/components/Button)
 - [Tabs](src/components/Tabs)
+- [Icon](src/components/Icon)
 
 ## Styling
 
