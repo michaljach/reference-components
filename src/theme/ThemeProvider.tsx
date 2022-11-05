@@ -8,7 +8,7 @@ import { ITheme } from '../common/common-interface'
 export const ThemeContext = createContext({ theme: defaultTheme, css: emotionCss })
 
 interface IThemeProvider {
-  theme?: ITheme
+  theme?: Partial<ITheme>
 }
 
 export function ThemeProvider({ children, theme }: PropsWithChildren<IThemeProvider>) {

@@ -91,4 +91,13 @@ describe('Button', () => {
     )
     expect(screen.queryByText(/Loading Icon/)).toBeInTheDocument()
   })
+
+  it('should show disabled state', async () => {
+    const container = render(
+      <Button onClick={() => null} disabled>
+        Example
+      </Button>
+    )
+    expect(container.container.firstElementChild).toHaveAttribute('disabled')
+  })
 })
