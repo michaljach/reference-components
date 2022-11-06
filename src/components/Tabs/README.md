@@ -19,10 +19,14 @@ import { Tabs } from 'reference-components'
 
 ## API
 
-| Prop | Type | Example |
-| ---- | ---- | ------- |
+| Prop       | Type                             | Example                        |
+| ---------- | -------------------------------- | ------------------------------ |
+| classNames | [`Tabs ClassNames`](#classnames) | `{{ icon: 'icon_classname' }}` |
+| activeTab  | `string`                         | `tab-1`                        |
 
 ## ClassNames
 
-| className | Element | DOM Element |
-| --------- | ------- | ----------- |
+| className | Element              | DOM Element                       |
+| --------- | -------------------- | --------------------------------- |
+| tabs      | Tabs Buttons         | `<span class="ref-tabs-tabs">`    |
+| content   | Selected Tab content | `<span class="ref-tabs-content">` |
