@@ -23,6 +23,7 @@ import { Tabs } from 'reference-components'
 | ---------- | -------------------------------- | ------------------------------ |
 | classNames | [`Tabs ClassNames`](#classnames) | `{{ icon: 'icon_classname' }}` |
 | activeTab  | `string`                         | `tab-1`                        |
+| onChange   | `() => void`                     | `() => alert('Changed')`       |
 
 ## ClassNames
 

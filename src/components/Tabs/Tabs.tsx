@@ -19,6 +19,7 @@ export interface ITabs extends ICommon {
   classNames?: ITabsClassNames
   children: ReactElement<ITabPane>[]
   activeTab?: string
+  onChange?: () => void
 }
 
 interface ITabPane extends ICommon {
@@ -32,7 +33,13 @@ function TabPane({ children }: PropsWithChildren<ITabPane>) {
   return <div>{children}</div>
 }
 
-function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<ITabs>) {
+function Tabs({
+  className,
+  children,
+  classNames,
+  activeTab,
+  onChange
+}: PropsWithChildren<ITabs>) {
   const { theme, css } = useContext(ThemeContext)
   const arrayChildren: ReactElement<ITabPane>[] = Children.toArray(
     children
@@ -70,6 +77,7 @@ function Tabs({ className, children, classNames, activeTab }: PropsWithChildren<
     const tab = arrayChildren.find((child) => child.props.id === id)
     if (tab) {
       setActive(tab)
+      onChange?.()
     }
   }
 

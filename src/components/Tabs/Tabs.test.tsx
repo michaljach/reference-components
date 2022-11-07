@@ -55,4 +55,22 @@ describe('Tabs', () => {
     expect(screen.queryByText(/Test 2/)).toBeInTheDocument()
     expect(container.firstChild?.childNodes[0]).toHaveClass('tabs_class')
   })
+
+  it('should trigger onChange event', async () => {
+    const onChange = jest.fn()
+    render(
+      <Tabs classNames={{ tabs: 'tabs_class' }} onChange={onChange}>
+        <Tabs.TabPane title="Tab 1" id="tab1">
+          Test 1
+        </Tabs.TabPane>
+        <Tabs.TabPane title="Tab 2" id="tab2">
+          Test 2
+        </Tabs.TabPane>
+      </Tabs>
+    )
+
+    const tab = await screen.findAllByText('Tab 2')
+    await userEvent.click(tab[0])
+    expect(onChange).toBeCalled()
+  })
 })
