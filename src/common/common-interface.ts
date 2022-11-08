@@ -25,6 +25,12 @@ export interface ITheme {
       dark: string
       text: string
     }
+    error: {
+      main: string
+      light: string
+      dark: string
+      text: string
+    }
   }
   shape: {
     borderRadius: string

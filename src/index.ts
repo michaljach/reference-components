@@ -1,3 +1,4 @@
+export * from './components/Input/Input'
 export * from './components/Button/Button'
 export * from './components/Tabs/Tabs'
 export * from './components/Icon/Icon'

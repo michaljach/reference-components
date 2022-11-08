@@ -25,6 +25,12 @@ const defaultTheme: ITheme = {
       light: '#ff0000',
       dark: '#ff0000',
       text: '#fff'
+    },
+    error: {
+      main: '#880808',
+      light: '#880808',
+      dark: '#880808',
+      text: '#fff'
     }
   },
   shape: {
